@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 
+        a(href="/") Volver 
+    main
+        if tarjeta 
+            each card in tarjeta
+                .formulario 
+                    h2 Crear Tarjeta
+                    form(action="/actualizar/"+card.id, method="post") 
+                        input(type="text",placeholder="Titulo",name="nombre",value=card.nombre)
+                        input(type="text",placeholder="url",name="url",value=card.url)
+                        textarea(name="descripcion", cols="30", rows="10",placeholder="Descripcion")=card.descripcion 
+                        input(type="submit", value="Crear")

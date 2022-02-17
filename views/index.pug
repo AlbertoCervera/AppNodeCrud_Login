@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Tus tarjetas
+  main 
+    if tarjetas 
+      each card in tarjetas 
+        .box 
+          h1 
+            a(href=card.url,target="blank")=card.nombre 
+          hr
+          .content
+            p=card.descripcion
+          hr
+          span 
+            a(href="/eliminar/" +card.id,id="eliminar") Eliminar
+            a(href="/actualizar/"+card.id,id="actualizar") Actualizar
+    

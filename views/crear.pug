@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 
+        a(href="/") Volver 
+    main
+
+        .formulario 
+            h2 Crear Tarjeta
+            form(action="/crear", method="post") 
+                input(type="text",placeholder="Titulo",name="nombre")
+                input(type="text",placeholder="url",name="url")
+                textarea(name="descripcion", cols="30", rows="10",placeholder="Descripcion")   
+                input(type="submit", value="Crear")
